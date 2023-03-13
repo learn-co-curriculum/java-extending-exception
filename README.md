@@ -43,7 +43,7 @@ public class NegativeNumberException extends RuntimeException {
 
 The class `UncheckedExceptionMain` shown below has the method `countDown(int start)`,
 which throws a `NegativeNumberException` if the parameter value is negative.
-Since the exception is unchecked, the `countDown(int start)` method need not declare it throws the exception.
+Since the exception is unchecked, the `countDown(int start)` method does not need to declare it throws the exception.
 
 The `main()` method calls the `countDown(int start)` method passing a random integer
 value, which may be negative.  Since `NegativeNumberException` is unchecked, the `main()` does
@@ -70,7 +70,7 @@ public class UncheckedExceptionMain {
     public static void main(String[] args) {
         Random random = new Random();
         int num = random.nextInt(-5, 5);
-        // Need not handle NegativeNumberException (extends RuntimeException)
+        // Does not need to handle NegativeNumberException (extends RuntimeException)
         // Method call will throw NegativeNumberException if num < 0
         countDown(num);
     }
@@ -106,7 +106,7 @@ ever being thrown by simply fixing the range of random values:
 public static void main(String[] args) {
     Random random = new Random();
     int num = random.nextInt(0, 5);
-    // Need not handle NegativeNumberException (extends RuntimeException)
+    // Does not need to handle NegativeNumberException (extends RuntimeException)
     // Method call will throw NegativeNumberException if num < 0
     countDown(num);
 }
